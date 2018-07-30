@@ -2,10 +2,12 @@ const express = require('express'),
     bodyParser = require('body-parser');
 var app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    bodyParser.json();
     next();
 });
 
