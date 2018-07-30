@@ -9,7 +9,9 @@ app.use((req, res, next) => {
     next();
 });
 
-let historico = {};
+let historico = {
+  "Hello": "World"
+};
 
 app.get('/', function (req, res) {
   res.send(historico);
